@@ -27,12 +27,8 @@ npm i -D swagger-ui-express
 
 **Correr y Probar servidor:** npm run dev
 
-<<<<<<< HEAD
-**  Correr y Probar servidor:** npm run dev
-**  Entrar al navegador:** http://localhost:3000/api/user
-=======
-**Entrar al navegador:** http://localhost:3000/api/use
->>>>>>> b11a789aa6e930e62b58aad78e7e61e3d6144787
+**Correr y Probar servidor:** npm run dev
+**Entrar al navegador:** http://localhost:3000/api/user
 
 **Modelo de base de datos para el backend:**
 [![modelo de bd](https://github.com/quvp861205/backendnodejs-posts/blob/master/modelo%20de%20base%20de%20datos.jpg?raw=true "modelo de bd")](https://github.com/quvp861205/backendnodejs-posts/blob/master/modelo%20de%20base%20de%20datos.jpg?raw=true "modelo de bd")
