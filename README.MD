@@ -5,9 +5,10 @@
 
 **Instalar nodejs:** https://nodejs.org/es/download/
 
-**Inicializar proyecto de nodejs: **npm init 
+**Inicializar proyecto de nodejs:** npm init 
 
 **Instalar express:** npm i -D express
+
 **Instalar nodemon:** npm i -D nodemon
 
 **Configurar package.json:**
