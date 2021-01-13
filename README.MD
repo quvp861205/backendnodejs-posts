@@ -4,7 +4,9 @@
 
 
 **Instalar nodejs:** https://nodejs.org/es/download/
+
 **Instalar insomnia para probar nuestro rest:** https://insomnia.rest/blog/open-source-announcement
+
 **Usar swagger para documentar nuestra api:** https://editor.swagger.io/
 
 **Inicializar proyecto de nodejs:** npm init 
@@ -12,8 +14,11 @@
 **Instalar express:** npm i -D express
 
 **Instalar nodemon:** npm i -D nodemon
+
 **Instalar body-parser:** npm i -D body-parser
+
 **Instalar nanoid:** npm i -D nanoid
+
 **Instalar swagger para documentacion del proyecto (http://localhost:3000/api-docs):** 
 npm i -D swagger-ui-express
 
