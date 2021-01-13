@@ -12,10 +12,12 @@
 **Instalar nodemon:** npm i -D nodemon
 
 **Configurar package.json:**
+```json
 "scripts": {    
     "start": "node api/index.js",
     "dev": "nodemon --watch api api/index.js"
   }
+```
 
 **  Correr y Probar servidor:** npm run dev
 **  Entrar al navegador:** http://localhost:3000/api/use
