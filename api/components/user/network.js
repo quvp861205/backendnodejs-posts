@@ -7,6 +7,9 @@ const router = express.Router(); //Rutear los servicios http
 
 router.get("/", list);
 router.get("/:id", get);
+router.post("/", upsert);
+router.get("/remove/:id", remove);
+
 
 //Obtener todos los usuarios
 function list(req, res){
@@ -29,8 +32,17 @@ function get(req, res){
 }
 
 //Insertar un usuario
-function get(req, res){
+function upsert(req, res){
     controller.upsert(req.body).then((user) => {
+        response.success(req, res, user, 201);
+    }).catch((err) => {
+        response.error(req, res, err.message, 500);
+    });    
+}
+
+//Remover un usuario
+function remove(req, res){
+    controller.remove(req.params.id).then((user) => {
         response.success(req, res, user, 201);
     }).catch((err) => {
         response.error(req, res, err.message, 500);

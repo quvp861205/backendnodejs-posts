@@ -34,10 +34,16 @@ module.exports = function(injectedStore) {
         
     }
 
+    function remove(id) {
+        return store.get(TABLA, id);        
+    }
+
 
 
     return {
         list,
-        get
+        get,
+        upsert,
+        remove
     }
 }

@@ -16,8 +16,8 @@ app.use(bodyParser.json());
 const swaggerDoc = require("./swagger.json");
 
 
-//RUTAS DEL NAVEGADOR http://localhost:3000/api/use
-app.use("/api/use", user);
+//RUTAS DEL NAVEGADOR http://localhost:3000/api/user
+app.use("/api/user", user);
 
 //RUTA PARA LA DOCUMENTACION http://localhost:3000/api-docs
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc));

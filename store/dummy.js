@@ -14,12 +14,14 @@ async function get(tabla, id) {
     return col.filter(item=>item.id===id)[0] || null;
 }
 
-function upsert(tabla, data) {
+async function upsert(tabla, data) {
     db[tabla].push(data);
 }
 
-function remove(tabla, id) {
-    return true;
+async function remove(tabla, id) {
+    let col = await list(tabla);
+    let element  = col.filter(item=>item.id===id)[0] || null;
+    return dt[tabla.pop(element)];
 }
 
 module.exports = {
