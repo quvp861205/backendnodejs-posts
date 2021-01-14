@@ -1,14 +1,17 @@
 //SERVICIOS PARA LA ENTIDAD USUARIO
 
 const express = require('express');
+const secure = require("./secure");
 const response =  require('../../../network/response'); //Funciones de retorno exito o error
 const controller =  require('./index'); //Funciones de entrada para obtener datos
 const router = express.Router(); //Rutear los servicios http
+
 
 router.get("/", list);
 router.get("/:id", get);
 router.post("/", upsert);
 router.get("/remove/:id", remove);
+router.put("/", secure("update"), upsert);
 
 
 //Obtener todos los usuarios

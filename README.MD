@@ -19,6 +19,10 @@
 
 **Instalar nanoid:** npm i -D nanoid
 
+**Instalar  jsonwebtoken para autenticaion:** npm i -D jsonwebtoken
+
+ **Instalar  bcrypt para encriptar contraseñas:** npm i -D bcrypt
+
 **Instalar swagger para documentacion del proyecto (http://localhost:3000/api-docs):** 
 npm i -D swagger-ui-express
 
