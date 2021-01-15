@@ -4,7 +4,8 @@ const express =  require('express');
 const config = require('../config.js');
 const user =  require('./components/user/network');
 const bodyParser = require("body-parser");
-const auth = require('./components/auth/network');
+const auth = require('./components/auth/network'); //middleware para verificar autentificacion
+const errors = require("../network/errors"); //middleware para gestionar errores
 
 //importar la documentacion de https://editor.swagger.io/
 //http://localhost:3000/api-docs
@@ -27,6 +28,7 @@ app.use("/api/auth", auth);
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc));
 
 
+app.use(errors);
 
 //INICIO DEL SERVIDOR EN EL PUERTO ESPECIFICO
 app.listen(config.api.port, () => {
