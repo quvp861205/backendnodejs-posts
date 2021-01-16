@@ -14,11 +14,14 @@ function verify(token) {
 const check = {
     own: function(req, owner) {
         const decoded = decodeHeader(req);
-        console.log(decoded);
 
+        console.log("Validar si es correcto el token de autentificacion "+decoded.id+" !== "+owner);
         if (decoded.id !== owner) {
             throw error('Necesitas estar autenticado', 401);
         }
+    },
+    logged: function(req, owner) {
+        const decoded = decodeHeader(req);
     }
 
     //COMPROBAR SI ES O NO PROPIO

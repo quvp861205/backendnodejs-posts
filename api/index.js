@@ -5,6 +5,7 @@ const config = require('../config.js');
 const user =  require('./components/user/network');
 const bodyParser = require("body-parser");
 const auth = require('./components/auth/network'); //middleware para verificar autentificacion
+const post = require('./components/post/network'); 
 const errors = require("../network/errors"); //middleware para gestionar errores
 
 //importar la documentacion de https://editor.swagger.io/
@@ -23,6 +24,9 @@ app.use("/api/user", user);
 
 //RUTA PARA LOGIN
 app.use("/api/auth", auth);
+
+//RUTA PARA ENTIDAD POST
+app.use("/api/post", post);
 
 //RUTA PARA LA DOCUMENTACION http://localhost:3000/api-docs
 app.use("/api-docs", swaggerUI.serve, swaggerUI.setup(swaggerDoc));

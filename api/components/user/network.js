@@ -13,15 +13,16 @@ router.post("/", upsert);
 router.get("/remove/:id", remove);
 router.put("/", secure("update"), upsert);
 
+router.post("/follow/:id", secure("follow"), follow);
+router.get('/:id/following', following);
 
 //Obtener todos los usuarios
 function list(req, res, next){
    
     controller.list().then((lista) => {
         response.success(req, res, lista, 200);
-    }).catch((err) => {
-        response.error(next);
-    });
+    }).catch(next);
+
     
 }
 
@@ -29,27 +30,43 @@ function list(req, res, next){
 function get(req, res, next){
     controller.get(req.params.id).then((user) => {
         response.success(req, res, user, 200);
-    }).catch((err) => {
-        response.error(next);
-    });    
+    }).catch(next);
+   
 }
 
 //Insertar un usuario
 function upsert(req, res, next){
     controller.upsert(req.body).then((user) => {
         response.success(req, res, user, 201);
-    }).catch((err) => {
-        response.error(next);
-    });    
+    }).catch(next);
+
 }
 
 //Remover un usuario
 function remove(req, res, next){
     controller.remove(req.params.id).then((user) => {
         response.success(req, res, user, 201);
-    }).catch((err) => {
-        response.error(next);
-    });    
+    }).catch(next);
+  
+}
+
+
+//Seguir a un usuario
+function follow(req, res, next){
+
+    controller.follow(req.user.id, req.params.id).then((data) => {
+        response.success(req, res, data, 201);
+    }).catch(next);
+  
+}
+
+//ver a quien esta siguiendo un usuario
+function following(req, res, next) {
+	return controller.following(req.params.id)
+		.then( (data) => {
+			return response.success(req, res, data, 200);
+		})
+		.catch(next);
 }
 
 
