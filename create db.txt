@@ -1,0 +1,30 @@
+CREATE DATABASE redsocial;
+
+CREATE TABLE `auth` (
+	`id` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`username` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`password` VARCHAR(500) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	INDEX `id` (`id`) USING BTREE,
+	INDEX `username` (`username`) USING BTREE
+);
+
+CREATE TABLE `post` (
+	`id` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`text` TEXT NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`user` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci'
+);
+
+CREATE TABLE `user` (
+	`id` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`username` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`name` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	UNIQUE INDEX `username` (`username`) USING BTREE,
+	INDEX `id` (`id`) USING BTREE
+);
+
+CREATE TABLE `user_follow` (
+	`user_from` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	`user_to` VARCHAR(50) NULL DEFAULT NULL COLLATE 'ascii_general_ci',
+	INDEX `user_from` (`user_from`) USING BTREE,
+	INDEX `user_to` (`user_to`) USING BTREE
+);
