@@ -11,10 +11,9 @@ const router = require('./network');
 
 const app = express();
 
+app.use(bodyParser.json());
 
 app.use("/", router);
-
-app.use(bodyParser.json());
 
 app.listen(config.mysql_service.port, () => {
     console.log('Servicio de mysql escuchando en el puerto ', config.mysql_service.port)

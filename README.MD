@@ -29,6 +29,8 @@
 
 **Instalar mysql:**   npm i -D mysql
 
+**Instalar request para consumir microservicios mysql:** npm i -D request
+
 
 
 **Instalar swagger para documentacion del proyecto (http://localhost:3000/api-docs):** 

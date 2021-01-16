@@ -8,7 +8,7 @@ const router = express.Router(); //Rutear los servicios http
 router.get("/:table", list);
 router.get("/:table/:id", get);
 router.post("/:table", insert);
-router.put("/:table", upsert);
+router.put("/:table", update);
 
 async function list(req, res, next) {
     const datos = await store.list(req.params.table);
@@ -25,8 +25,8 @@ async function insert(req, res, next) {
     response.success(req, res, datos, 200);
 }
 
-async function upsert(req, res, next) {
-    const datos = await store.upsert(req.params.table, req.body);
+async function update(req, res, next) {
+    const datos = await store.update(req.params.table, req.body);
     response.success(req, res, datos, 200);
 }
 

@@ -1,4 +1,4 @@
-const store = require('../../../store/mysql');
+
 const nanoid = require('nanoid');
 const auth = require('../auth');
 
@@ -6,10 +6,6 @@ const TABLA = 'post';
 
 module.exports = function(injectedStore) {
     let store = injectedStore;
-    if(!store) {
-        store = require('../../../store/mysql');
-        
-    }
 
     function list() {
         return store.list(TABLA);

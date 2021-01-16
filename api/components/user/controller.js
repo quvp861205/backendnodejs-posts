@@ -1,4 +1,3 @@
-const store = require('../../../store/mysql');
 const nanoid = require('nanoid');
 const auth = require('../auth');
 
@@ -6,9 +5,6 @@ const TABLA =  'user';
 
 module.exports = function(injectedStore) {
     let store = injectedStore;
-    if(!store) {
-        store = require('../../../store/mysql');
-    }
 
     function list() {   
              
@@ -44,6 +40,9 @@ module.exports = function(injectedStore) {
                 password: body.password
             }, esNuevo)
         }
+
+        console.log(`<<Insertando datos en la ${TABLA}>>`);
+        console.log(user)
 
         return store.upsert(TABLA, user, esNuevo);
         

@@ -35,6 +35,7 @@ function handleCon() {
 handleCon();
 
 function list(table) {
+    console.log(`-LIST- ${table}`);
     return new Promise((resolve, reject) => {
         connection.query(`SELECT * FROM ${table}`,
         (err, res) => {
@@ -45,6 +46,7 @@ function list(table) {
 }
 
 function get(table, id) {
+    console.log(`-GET- ${table}/${id}`);
     return new Promise((resolve, reject) => {
         connection.query(`SELECT * FROM ${table} WHERE id='${id}'`,
         (err, res) => {
@@ -65,7 +67,8 @@ function remove(table, id) {
 }
 
 function insert(table, data) {
-
+    console.log(`-INSERT- ${table}`);
+    console.log(data);
     return new Promise((resolve, reject) => {
         connection.query(`INSERT INTO ${table} SET ?`, data,
         (err, res) => {
@@ -76,6 +79,8 @@ function insert(table, data) {
 }
 
 function update(table, data) {
+    console.log(`-UPDATE- ${table}`);
+    console.log(data);
     return new Promise((resolve, reject) => {
         connection.query(`UPDATE ${table} SET ? WHERE id=?`, [data, data.id],
         (err, res) => {
@@ -120,5 +125,7 @@ module.exports = {
     get,
     upsert,
     query,
+    update,
+    insert,
     remove
 }

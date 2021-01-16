@@ -1,4 +1,4 @@
-const store = require('../../../store/dummy');
+
 const nanoid = require('nanoid'); //generador de id
 const auth = require('../../../auth'); //jsonwebtoken
 const bcrypt =  require('bcrypt');
@@ -8,9 +8,6 @@ const TABLA =  'auth';
 
 module.exports = function(injectedStore) {
     let store = injectedStore;
-    if(!store) {
-        store = require('../../../store/dummy');
-    }
 
     async function login(username, password) {      
         
@@ -29,7 +26,6 @@ module.exports = function(injectedStore) {
     }
      
     
-
     async function upsert(data, esNuevo){
         const authData = {
             id: data.id
@@ -43,8 +39,11 @@ module.exports = function(injectedStore) {
         if( data.password ) {
             
             authData.password = await bcrypt.hash(data.password, 5);
-            console.log("encriptando "+data.password+": "+authData.password);
+            console.log("--encriptando contraseña: "+data.password+" -> "+authData.password);
         }
+
+        console.log(`<<Insertando datos en la tabla auth>>`);
+        console.log(authData);
 
         return store.upsert(TABLA, authData, esNuevo);
     }
