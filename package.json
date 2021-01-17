@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node api/index.js",
     "dev": "nodemon --watch api api/index.js",
-    "mysql": "nodemon --watch mysql mysql/index.js"
+    "mysql": "nodemon --watch mysql mysql/index.js",
+    "post": "nodemon --watch post post/index.js"
   },
   "repository": {
     "type": "git",

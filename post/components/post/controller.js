@@ -1,6 +1,5 @@
 
 const nanoid = require('nanoid');
-const auth = require('../auth');
 
 const TABLA = 'post';
 

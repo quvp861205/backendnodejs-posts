@@ -31,16 +31,17 @@ function createRemoteDB(host, port) {
 
     function req(method, table, data) {
         let url = URL + "/" + table;
-        let body = null;
+        let dataBody = '';
+        
 
         if(data && method === 'GET') {
             url += `/${data}`;
         } else if(data) {
-            data = JSON.stringify(data);
+            dataBody = JSON.stringify(data);
         }
-
-        console.log(`PETICION HTTP: ${method} -> ${url}`);        
-        if(data!=undefined) console.log(data);
+        
+        console.log(`\nPETICION HTTP: ${method} -> ${url}`);        
+        if(dataBody!='') console.log(dataBody);
 
         return new Promise((resolve, reject) => {
             request({
@@ -49,14 +50,17 @@ function createRemoteDB(host, port) {
                     'content-type': 'application/json',
                 },
                 url: url,
-                body: data,
-               
+                body: dataBody,
+                
             }, (err, req, result) => {
-                console.log(result);
+                
                 if( err ) {
                     console.error("Error con la base de datos remota", err);
                     return reject(err.message);
                 }
+
+                console.log(`<< RESPUESTA >>`);
+                console.log(result);
 
                 const resp = JSON.parse(result);
                 
