@@ -32,16 +32,18 @@
 **Instalar request para consumir microservicios mysql:** npm i -D request
 
 **Instalar pm2 para gestionar los microservicios:** npm i -g pm2
+
   **Utilizandolo:** 
-  pm2 start api/index.js --name api-principal
-  pm2 start mysql/index.js --name api-mysql
-  pm2 start post/index.js --name api-post
-  pm2 status
-  pm2 logs
-  pm2 delete [api-principal|api-mysql|api-post]
-  ó
-  pm2 delete all
-  Ejecutando: pm2 start ecosystem.config.js --env [development|production]
+  
+      pm2 start api/index.js --name api-principal
+      pm2 start mysql/index.js --name api-mysql
+      pm2 start post/index.js --name api-post
+      pm2 status
+      pm2 logs
+      pm2 delete [api-principal|api-mysql|api-post]
+      ó
+      pm2 delete all
+      Ejecutando: pm2 start ecosystem.config.js --env [development|production]
 
 **Instalar https://vercel.com/dashboard para usar este proyecto en serveless en la nube:** npm i -g vercel
 
