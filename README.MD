@@ -11,7 +11,7 @@
 
 **Instalar mysqlserver o xampp e iniciar servicio mysql:** https://www.apachefriends.org/es/index.html
 
-
+**O crear la bd en linea de preferencia:** https://remotemysql.com/databases.php?action=new
 
 **Inicializar proyecto de nodejs:** npm init 
 
@@ -42,6 +42,17 @@
   ó
   pm2 delete all
   Ejecutando: pm2 start ecosystem.config.js --env [development|production]
+
+**Instalar https://vercel.com/dashboard para usar este proyecto en serveless en la nube:** npm i -g vercel
+
+**Instalar y ejecutar con:** vercel
+
+**Configurar vercel:** vercel.json
+
+**Ejemplos:**
+https://backendnodejs-posts-f88v3dc1z.vercel.app/post
+https://backendnodejs-posts-f88v3dc1z.vercel.app/api/user
+
 
 **Instalar swagger para documentacion del proyecto (http://localhost:3000/api-docs):** 
 npm i -D swagger-ui-express
