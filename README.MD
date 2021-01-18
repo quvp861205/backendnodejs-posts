@@ -76,3 +76,47 @@ npm i -D swagger-ui-express
 
 **Modelo de base de datos para el backend:**
 [![modelo de bd](https://github.com/quvp861205/backendnodejs-posts/blob/master/modelo%20de%20base%20de%20datos.jpg?raw=true "modelo de bd")](https://github.com/quvp861205/backendnodejs-posts/blob/master/modelo%20de%20base%20de%20datos.jpg?raw=true "modelo de bd")
+
+
+**Ejemplos para consumir la api:**
+
+    list user: http://localhost:3000/api/user
+    get user: http://localhost:3001/user/NOMUWpvTF8FsrgwijziOj
+    list post: localhost:3002/post
+    get post: localhost:3002/post/mj9uBWvmooTRW-DZwMUd3
+    follow user: localhost:3000/api/user/follow/H1_EgK5wOerIeFt9U8st3
+    get following: localhost:3000/api/user/NOMUWpvTF8FsrgwijziOj/following
+
+    insert user: localhost:3000/api/user
+    body:
+    {	
+    	"name": "nombre apellido", 
+    	"username": "nombre", 
+    	"password": "contra"
+    }
+    
+    insert post: localhost:3002/post
+    body:
+    {
+    	"text": "Un posts mas hoy lunes",
+    	"user": "nombre"
+    }
+    
+    login: localhost:3000/api/auth/login
+    body:
+    {
+    	"username": "nombre",
+    	"password": "contra"
+    }
+    
+    update user: localhost:3000/api/user
+    body:
+    {
+    	"id": "NOMUWpvTF8FsrgwijziOj",
+    	"name": "nombre apellido",
+    	"username": "nombre",
+    	"password": "contra"
+    }
+    token: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ik5PTVVXcHZURjhGc3Jnd2lqemlPaiIsInVzZXJuYW1lIjoicGVkcm8iLCJwYXNzd29yZCI6IiQyYiQwNSR2UDNBeDlNcEt0cEZMQWFPMWxXbDBlaS52NlVhQW9zTWV0S2YxNHg4bGI3MjNhLk44L0Y1bSIsImlhdCI6MTYxMDc0ODQ1MH0.B7MGnwAeoGe6UsPaykS5xDTCZTd_hXad6REXWjBOA3k
+    
+    remove post: localhost:3000/api/post/remove/NcaMurGb4jjWVHXj6cMsn
