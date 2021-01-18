@@ -44,6 +44,7 @@
       ó
       pm2 delete all
       Ejecutando: pm2 start ecosystem.config.js --env [development|production]
+      pm2 start ecosystem.config.js --env development; pm2 logs
 
 **Instalar https://vercel.com/dashboard para usar este proyecto en serveless en la nube:** npm i -g vercel
 
@@ -55,6 +56,7 @@
 https://backendnodejs-posts-f88v3dc1z.vercel.app/post
 https://backendnodejs-posts-f88v3dc1z.vercel.app/api/user
 
+**Instalar redis para el manejo del cache https://redislabs.com/:** npm i -g redis
 
 **Instalar swagger para documentacion del proyecto (http://localhost:3000/api-docs):** 
 npm i -D swagger-ui-express
